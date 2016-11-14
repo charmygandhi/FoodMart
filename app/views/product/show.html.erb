@@ -1,2 +1,12 @@
-<h1>Product#show</h1>
-<p>Find me in app/views/product/show.html.erb</p>
+<h1></h1>
+<div>
+<%= image_tag @product.image, size: '500x500', class: 'rounded float-xs-right'%>
+<h2><%= @product.title %></h2>
+<div>
+<strong>$<%= @product.price %></strong>
+<br><br>
+<a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a>
+<br><br><br>
+<blockquote><%= @product.description %></blockquote>
+</div>
+</div>
