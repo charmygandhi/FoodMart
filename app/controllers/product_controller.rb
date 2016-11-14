@@ -1,13 +1,18 @@
 class ProductController < ApplicationController
   def index
-  	if(params[:category].blank?)
-  		@products = Product.all
-  	else
+  	if(! params[:category].blank?)
   		@products = Product.where(:category_id => params[:category])
+  	elsif(! params[:search].blank?)
+  		search = params[:search]
+  		@products = Product.where('title LIKE ?', "%#{search}%")
+  	else
+  		@products = Product.all
   	end
   end
 
   def show
-  	@product = Product.find(params[:product])
+  	if(! params[:product].blank?)
+  		@product = Product.find(params[:product])
+  	end
   end
 end
