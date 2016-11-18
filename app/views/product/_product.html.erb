@@ -1,11 +1,10 @@
 
-<div class="col-xs-6 col-md-4">
-    <div class = "card">
-      <%= image_tag product.image, size: '242x200', class: 'card-img-top img-fluid' %>
-      <div class = "card-block">
-      <h4 class = "card-title">
+<div class="col-xs-18 col-sm-6 col-md-3">
+    <div class = "thumbnail">
+      <%= image_tag product.image, size: '500x250', class: 'card-img-top img-fluid' %>
+      <div class = "caption">
         <%= link_to product.title, product_show_path(:product => product.id) %></h4>
-      <p class = "card-text"><%= product.price %></p>
+      <p class = "card-text">$<%= product.price %></p>
      <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a>
       </div>
     </div>
