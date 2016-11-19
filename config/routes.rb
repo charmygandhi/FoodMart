@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'customer/new'
+
+  get 'customer/login'
+
   get 'about/index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config

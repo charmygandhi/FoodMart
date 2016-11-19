@@ -27,8 +27,13 @@
         <% category = Category.all
           category.each do|c| %>
         <a class="dropdown-item" href=<%=product_index_path(:category => c.id) %>><%= c.name %></a>
-        <%end%>
-        
+        <%end%>   
+      </div>
+    </li>
+     <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="http://example.com" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
+      <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
+        <a class="dropdown-item" href=<%= customer_login_path %>>Login</a>   
       </div>
     </li>
   </ul>
@@ -37,6 +42,8 @@
     <!--<input class="form-control" type="text" placeholder="Search">-->
     <button class="btn btn-outline-success" type="submit">Search</button>
   </form>
+
+
 </nav>
 	<div class = "container">
 		<%= yield %>
